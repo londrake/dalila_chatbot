@@ -1,0 +1,102 @@
+
+.chatMessage
+{
+    margin-bottom: 10px;
+    padding: 15px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat-body.left
+{
+    margin-left: 60px;
+}
+
+.chat-body.right
+{
+    margin-right: 60px;
+}
+
+
+
+p.messaggio
+{
+    margin: 0;
+    color: #777777;
+}
+
+
+
+.message {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.timeform {
+  float: left;
+  width: 100%;
+
+  i {
+    margin-left: 20px;
+  }
+
+  .timestamp{
+    font-size: 0.6em;
+  }
+}
+
+.avatar{
+  width: 50px;
+  margin-right: 20px;
+}
+.Utente{
+  //float: right;
+  //width: 50px;
+  margin-left: auto;
+  margin-right:0;
+}
+
+    
+    
+
+#container {
+  width: 100%;
+  margin: 1em auto;
+  padding: 0;
+  background:#fff;
+  text-align: center;
+}
+
+.items {
+  float: left;
+  text-align: center;
+  //height:150px;
+  //width: 244px;
+  background:#ECECEC;
+  margin-left: 2.5px;
+  margin-right: 2.5px
+  
+}
+.card-img-top{
+  text-align: center;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  //margin-bottom: 15px;
+  background-color: white;
+}
+.card-img{
+  text-align: center;
+  background-color:#ECECEC;
+}
+
+
+.card-body{
+  float: left;
+  margin-top: 15px;
+  padding: 15px
+}
+
+#left, #right { 
+  margin: 0px;    
+}

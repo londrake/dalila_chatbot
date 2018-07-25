@@ -1,0 +1,8 @@
+<div class="container">
+  <div  class="chatform col-lg-8 col-md-8 col-xs-12">
+    <message-list [messages]="messages"></message-list>  
+    <carousel-panel [carousel]="carousel" ></carousel-panel>
+    <suggestion-panel [suggestions]="suggestions" ></suggestion-panel>
+    <message-form [message]="message" [messages]="messages"  (panelShow)="getData($event)"></message-form>
+  </div>
+</div>

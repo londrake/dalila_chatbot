@@ -1,0 +1,77 @@
+
+
+
+
+{{check(message.avatar)}}
+<li class="chatMessage {{position}}" >
+  
+    <span class="{{'float-'+position}}">
+        <img [src]="message.avatar" class="avatar"/>
+    </span>
+  
+  <div class="message">
+          <div class="row chat-body {{position}}">            
+              <strong class="{{'float-'+position}} {{user}} primary-font">{{user}}</strong>              
+          </div>
+          <div class="row chat-body {{position}}">
+            <div class="messaggio {{'float-'+position}} {{user}}">
+                {{ message.content }}
+            </div> 
+          </div>
+
+  </div>
+  <!--div class="timeform">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> <span class="timestamp">at {{message.timestamp | date : 'dd/MM/yyyy' }}</span>
+  </div -->
+
+  <div *ngIf= "message.carousel.length>0" id="container">
+    <!-- SHOW CAROUSEL IF THERE ARE ANY -->
+      <div 
+        ng2-carouselamos
+        class="slides-wrapper"
+        [items]="message.carousel"
+        [width]="500"
+        [$prev]="prev"
+        [$next]="next"
+        [$item]="item"
+        (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index"
+      >
+      </div>    
+    <ng-template #prev>
+      <span class="fa fa-chevron-left"  id="left" ></span>          
+    </ng-template>
+    <ng-template #next>
+      <span class="fa fa-chevron-right" id="right" ></span>          
+    </ng-template>
+    <ng-template #item let-item let-i="index">
+
+        <!-- button class="btn button-info items" (click)="setSuggestion(item)">
+          {{ item.title }}
+        </button -->
+
+        <div class="card items" (click)="setSuggestion(item)">
+          <img class="card-img-top " [src]="getImage(item)" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{item.description.substr(0,200)}}...</p>
+            <p class="card-text"><small class="text-muted"><a href="#" >Read More</a></small></p>
+          </div>
+        </div>
+
+    </ng-template>
+  </div>
+
+  <div *ngIf= "message.card.hasOwnProperty('title')" class="card">
+    <!-- SHOW CARD IF THERE ARE ANY -->
+      <div class="card-img"><img class="card-img-top card-img " [src]="getImage(message.card)" alt=""></div>
+      <div class="card-body">
+        <h5 class="card-title">{{ message.card.title }}</h5>
+        <p class="card-text">{{message.card.formattedText}}...</p>
+        <a *ngFor="let link of message.card.buttons" href="{{link.openUrlAction.url}}" class="btn btn-primary" target="_blank">{{link.title}}</a>
+      </div>
+    </div>
+
+  
+  
+  
+</li>

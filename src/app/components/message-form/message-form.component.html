@@ -1,0 +1,4 @@
+<div class="chatcontrol ">
+  <input type="text" class="form-control chatinput col-md-10  col-xs-12" [(ngModel)]="message.content" (keypress)="keyPress($event)" />
+  <button class="btn btn-success sendbtn  col-md-2 col-xsl-12" (click)="sendMessage()">Send</button>
+</div>

@@ -1,0 +1,40 @@
+<div class="card align-middle" [hidden] = "show(carousel)">
+  <div class="card-body">
+      <div id="container">
+          <div
+            ng2-carouselamos
+            class="slides-wrapper"
+            [items]="carousel"
+            [width]="500"
+            [$prev]="prev"
+            [$next]="next"
+            [$item]="item"
+            (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index"
+          >
+          </div>    
+        <ng-template #prev>
+          <span class="fa fa-chevron-left"  id="left" ></span>          
+        </ng-template>
+        <ng-template #next>
+          <span class="fa fa-chevron-right" id="right" ></span>          
+        </ng-template>
+        <ng-template #item let-item let-i="index">
+    
+            <!-- button class="btn button-info items" (click)="setSuggestion(item)">
+              {{ item.title }}
+            </button -->
+
+            <div class="card items" (click)="setSuggestion(item)">
+              <img class="card-img-top" [src]="getImage(item)" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{item.description.substr(0,200)}}...</p>
+                <p class="card-text"><small class="text-muted"><a href="#" >Read More</a></small></p>
+              </div>
+            </div>
+    
+        </ng-template>
+      </div>
+  </div>
+</div>
+
